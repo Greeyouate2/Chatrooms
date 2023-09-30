@@ -43,7 +43,7 @@
       methods: {
         // 送信ボタンが押されたら、クライアントからサーバーにメッセージを送信
         postMessage: function() {
-          console.log('messages', messages);
+          console.log('messages', this.chatmessages);
           socket.emit('c2s-msg', this.chatMessage);
           this.chatMessage = '';
           return false;
@@ -53,7 +53,7 @@
 
     // サーバーがメッセージをemitしたら、クライアント側のリストにメッセージを追加する
     socket.on('s2c-msg', function(msg) {
-      console.log(msg);
+      console.log('auto sever messages'msg);
       app.messages.push(msg);
       window.scrollTo(0, document.body.scrollHeight);
     });
