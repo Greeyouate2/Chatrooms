@@ -43,7 +43,7 @@
       methods: {
         // 送信ボタンが押されたら、クライアントからサーバーにメッセージを送信
         postMessage: function() {
-          console.log('messages', messages)
+          console.log('messages', messages);
           socket.emit('c2s-msg', this.chatMessage);
           this.chatMessage = '';
           return false;

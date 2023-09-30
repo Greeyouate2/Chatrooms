@@ -14,7 +14,7 @@ var users = [];
 io.on('connection', function(socket){
 
   // サーバー側のメッセージリストをクライアント側に送る（emit）
-  console.log('messages', messages)
+  console.log('messages', messages);
   socket.emit('init-chat', messages);
   // クライアント側から送られたメッセージを受け取り、全クライアントに送る（emit）
   socket.on('c2s-msg', function(msg) {
